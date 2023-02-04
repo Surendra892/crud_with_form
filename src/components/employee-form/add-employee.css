@@ -1,0 +1,17 @@
+.add-employee {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.logo {
+  text-align: center;
+  margin-top: 20px;
+}
+.logo > i {
+  font-size: 2.5rem;
+  border: solid black 3px;
+  border-radius: 50%;
+  padding: 0 10px;
+  height: min-content;
+  margin: 15px 0;
+}
