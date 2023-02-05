@@ -157,7 +157,8 @@ const EmployeeForm = () => {
   };
 
   const submitForm = (empData) => {
-    const id = Math.round(Math.random() * 200102) + 33;
+    const id =
+      Math.round(Math.random() * 100000) + Math.round(Math.random() * 1000);
     empData.id = id;
     if (employeeId) {
       const empIndex = empArr.findIndex((obj) => obj.id == employeeId);
@@ -193,26 +194,16 @@ const EmployeeForm = () => {
               return (
                 <Form noValidate>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      First Name
-                    </label>
+                    <label className="col-3 col-form-label">First Name</label>
                     <div className="col-7">
                       <input
                         type="email"
-                        testId={"email"}
                         name="firstname"
                         id="firstname"
                         value={values.firstname}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.firstname && touched.firstname
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       />
                       {errors.firstname && touched.firstname && (
                         <div className="invalid-feedback">
@@ -222,12 +213,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      Last Name
-                    </label>
+                    <label className="col-3 col-form-label">Last Name</label>
                     <div className="col-7">
                       <input
                         type="text"
@@ -236,11 +222,7 @@ const EmployeeForm = () => {
                         value={values.lastname}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.firstname && touched.lastname
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       />
                       {errors.lastname && touched.lastname && (
                         <div className="invalid-feedback">
@@ -250,12 +232,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      Email
-                    </label>
+                    <label className="col-3 col-form-label">Email</label>
                     <div className="col-7">
                       <input
                         type="text"
@@ -264,11 +241,7 @@ const EmployeeForm = () => {
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.email && touched.email
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       />
                       {errors.email && touched.email && (
                         <div className="invalid-feedback">{errors.email}</div>
@@ -276,12 +249,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      Contact no
-                    </label>
+                    <label className="col-3 col-form-label">Contact no</label>
                     <div className="col-7">
                       <input
                         pattern="\d{10}"
@@ -292,11 +260,7 @@ const EmployeeForm = () => {
                         value={values.mobile}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.mobile && touched.mobile
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       />
                       {errors.mobile && touched.mobile && (
                         <div className="invalid-feedback">{errors.mobile}</div>
@@ -304,10 +268,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
+                    <label className="col-3 col-form-label">
                       Date of Birth
                     </label>
                     <div className="col-7">
@@ -318,11 +279,7 @@ const EmployeeForm = () => {
                         value={values.dob}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.dob && touched.dob
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       />
                       {errors.dob && touched.dob && (
                         <div className="invalid-feedback">{errors.dob}</div>
@@ -330,48 +287,31 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      Gender
-                    </label>
+                    <label className="col-3 col-form-label">Gender</label>
                     <div className="col-7">
                       <div className="form-check">
                         <input
                           className="form-check-input"
                           type="radio"
                           name="gender"
-                          id="flexRadioDefault1"
                           value="Male"
                           checked={values.gender === "Male"}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexRadioDefault1"
-                        >
-                          Male
-                        </label>
+                        <label className="form-check-label">Male</label>
                       </div>
                       <div className="form-check">
                         <input
                           className="form-check-input"
                           type="radio"
                           name="gender"
-                          id="flexRadioDefault2"
                           value="Female"
                           checked={values.gender === "Female"}
                           onChange={handleChange}
                           onBlur={handleBlur}
                         />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexRadioDefault2"
-                        >
-                          Female
-                        </label>
+                        <label className="form-check-label">Female</label>
                       </div>
                       {errors.gender && touched.gender && (
                         <div className="invalid-feedback">{errors.gender}</div>
@@ -379,12 +319,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      Country
-                    </label>
+                    <label className="col-3 col-form-label">Country</label>
                     <div className="col-7">
                       <select
                         name="country"
@@ -395,11 +330,7 @@ const EmployeeForm = () => {
                           changeCountry(event.target.value);
                         }}
                         onBlur={handleBlur}
-                        className={
-                          errors.country && touched.country
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       >
                         <option hidden>Select Country</option>
                         {countries.map((country) => (
@@ -418,12 +349,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      State
-                    </label>
+                    <label className="col-3 col-form-label">State</label>
                     <div className="col-7">
                       <select
                         name="state"
@@ -434,11 +360,7 @@ const EmployeeForm = () => {
                           changeState(event.target.value, values.country);
                         }}
                         onBlur={handleBlur}
-                        className={
-                          errors.state && touched.state
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       >
                         <option hidden>Select State</option>
                         {states.map((state) => (
@@ -457,12 +379,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      City
-                    </label>
+                    <label className="col-3 col-form-label">City</label>
                     <div className="col-7">
                       <select
                         name="city"
@@ -470,11 +387,7 @@ const EmployeeForm = () => {
                         value={values.city}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.state && touched.city
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       >
                         <option hidden>Select City</option>
                         {cities.map((city) => (
@@ -489,12 +402,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      Address
-                    </label>
+                    <label className="col-3 col-form-label">Address</label>
                     <div className="col-7">
                       <textarea
                         type="text"
@@ -503,11 +411,7 @@ const EmployeeForm = () => {
                         value={values.address}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.address && touched.address
-                            ? "form-control input-error"
-                            : "form-control"
-                        }
+                        className={"form-control"}
                       ></textarea>
                       {errors.address && touched.address && (
                         <div className="invalid-feedback">{errors.address}</div>
@@ -515,12 +419,7 @@ const EmployeeForm = () => {
                     </div>
                   </div>
                   <div className="mb-3 row">
-                    <label
-                      htmlFor="staticEmail"
-                      className="col-3 col-form-label"
-                    >
-                      Hobbies
-                    </label>
+                    <label className="col-3 col-form-label">Hobbies</label>
 
                     <div className="col-7">
                       <div className="row">
@@ -565,11 +464,7 @@ const EmployeeForm = () => {
                         value={values.agree}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        className={
-                          errors.agree && touched.agree
-                            ? "form-check-input input-error"
-                            : "form-check-input"
-                        }
+                        className={"form-check-input"}
                       />
                       <label className="form-check-label" htmlFor="agree">
                         &nbsp; I agree
