@@ -10,7 +10,7 @@ const Home = () => {
       <nav>
         <Link to="/employeeslist">Employees List</Link>
         <Link to={"/employee/addemployee"} className=" ms-5">
-          Add New Employee
+          New Employee
         </Link>
       </nav>
       <p className="m-5">
